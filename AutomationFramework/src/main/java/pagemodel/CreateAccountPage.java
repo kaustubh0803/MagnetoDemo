@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class CreateAccountPage {
 
 	public WebDriver driver;
@@ -31,4 +32,6 @@ public class CreateAccountPage {
 	
 	@FindBy(css=".submit span")
 	WebElement createAccountButton;
+	
+	
 }
