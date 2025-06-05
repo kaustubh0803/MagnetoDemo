@@ -1,14 +1,21 @@
 package pagemodel;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.GetUserCredentials;
+import utilities.UserActions;
 
-public class CreateAccountPage {
+
+public class CreateAccountPage extends GetUserCredentials {
 
 	public WebDriver driver;
+	public UserActions userActions;
+	public MyAccountPage myAccountPage;
 	
 	public CreateAccountPage(WebDriver driver) {
 		this.driver=driver;
@@ -33,5 +40,29 @@ public class CreateAccountPage {
 	@FindBy(css=".submit span")
 	WebElement createAccountButton;
 	
+	public void enterFirstName() throws IOException {
+		userActions.enterFieldValue(firstName, getFirstName());
+	}
+	
+	public void enterLastName() throws IOException {
+		userActions.enterFieldValue(lastName, getLastName());
+	}
+	
+	public void enterEmailId() throws IOException {
+		userActions.enterFieldValue(emailAddress, getEmail());
+	}
+	
+	public void enterPassword() throws IOException {
+		userActions.enterFieldValue(password, getPassword());
+	}
+	
+	public void enterConfirmedPassword() throws IOException {
+		userActions.enterFieldValue(confirmedPassword, getPassword());
+	}
+	
+	public MyAccountPage clickCreateAccount() {
+		userActions.userclick(createAccountButton);
+		return myAccountPage;
+	}
 	
 }

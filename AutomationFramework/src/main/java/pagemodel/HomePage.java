@@ -6,9 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+import utilities.UserActions;
+
+public class HomePage extends UserActions{
 
 	public WebDriver driver;
+	SignInPage signInPage;
+	CreateAccountPage createAccountPage;
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
@@ -26,5 +30,16 @@ public class HomePage {
 	
 	public String getHomePageHeaderText() {
 		return homePageHeader.getText();
+	}
+	
+	public CreateAccountPage gotoSignupPage() {
+		userclick(signupButton);
+		return createAccountPage;
+		
+	}
+	
+	public SignInPage goToSigninPage() {
+		userclick(signinButton);
+		return signInPage;
 	}
 }
