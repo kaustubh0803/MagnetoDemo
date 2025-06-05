@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class GetUserCredentials {
 
+	public static String emailvalue;
 	public static Properties PropertiesFileSetup() throws IOException {
 		Properties prop=new Properties();
 		String basePath=System.getProperty("user.dir");
@@ -14,19 +15,24 @@ public class GetUserCredentials {
 		return prop;
 	}
 	
-	public String getPassword() throws IOException {
+	public static String getPassword() throws IOException {
 		return PropertiesFileSetup().getProperty("password");
 	}
 	
-	public String getEmail() throws IOException {
-		return PropertiesFileSetup().getProperty("emailstring")+System.currentTimeMillis()+PropertiesFileSetup().getProperty("emaildomain");
+	public static String generateEmail() throws IOException {
+		emailvalue= PropertiesFileSetup().getProperty("emailstring")+System.currentTimeMillis()+PropertiesFileSetup().getProperty("emaildomain");
+		return emailvalue;
+	}
+	 
+	public static String getEmail() {
+		return emailvalue;
 	}
 	
-	public String getFirstName() throws IOException {
+	public static String getFirstName() throws IOException {
 		return PropertiesFileSetup().getProperty("firstname");
 	}
 	
-	public String getLastName() throws IOException {
+	public static String getLastName() throws IOException {
 		return PropertiesFileSetup().getProperty("lastname");
 	}
 }

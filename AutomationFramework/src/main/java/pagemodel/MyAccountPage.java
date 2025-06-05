@@ -16,6 +16,7 @@ public class MyAccountPage extends UserActions {
 	public GetUserCredentials userCredentials;
 	private String accountHeadertext="My Account";
 	public MyAccountPage(WebDriver driver) {
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -31,7 +32,7 @@ public class MyAccountPage extends UserActions {
 	}
 	
 	public boolean verifysuccessfulAccountCreation() throws IOException {
-		return username.getText().contains(userCredentials.getFirstName()) && username.getText().contains(userCredentials.getLastName());
+		return username.getText().contains(GetUserCredentials.getFirstName()) && username.getText().contains(GetUserCredentials.getLastName());
 	}
 }
 

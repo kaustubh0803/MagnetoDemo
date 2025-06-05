@@ -11,13 +11,13 @@ import utilities.GetUserCredentials;
 import utilities.UserActions;
 
 
-public class CreateAccountPage extends GetUserCredentials {
+public class CreateAccountPage extends UserActions {
 
 	public WebDriver driver;
-	public UserActions userActions;
 	public MyAccountPage myAccountPage;
 	
 	public CreateAccountPage(WebDriver driver) {
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -41,28 +41,27 @@ public class CreateAccountPage extends GetUserCredentials {
 	WebElement createAccountButton;
 	
 	public void enterFirstName() throws IOException {
-		userActions.enterFieldValue(firstName, getFirstName());
+		enterFieldValue(firstName, GetUserCredentials.getFirstName());
 	}
 	
 	public void enterLastName() throws IOException {
-		userActions.enterFieldValue(lastName, getLastName());
+		enterFieldValue(lastName, GetUserCredentials.getLastName());
 	}
 	
 	public void enterEmailId() throws IOException {
-		userActions.enterFieldValue(emailAddress, getEmail());
+		enterFieldValue(emailAddress, GetUserCredentials.generateEmail());
 	}
 	
 	public void enterPassword() throws IOException {
-		userActions.enterFieldValue(password, getPassword());
+		enterFieldValue(password, GetUserCredentials.getPassword());
 	}
 	
 	public void enterConfirmedPassword() throws IOException {
-		userActions.enterFieldValue(confirmedPassword, getPassword());
+		enterFieldValue(confirmedPassword, GetUserCredentials.getPassword());
 	}
 	
-	public MyAccountPage clickCreateAccount() {
-		userActions.userclick(createAccountButton);
-		return myAccountPage;
+	public void clickCreateAccount() {
+		userclick(createAccountButton);
 	}
 	
 }

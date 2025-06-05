@@ -21,6 +21,7 @@ public class HomePage extends UserActions{
 	CreateAccountPage createAccountPage;
 	
 	public HomePage(WebDriver driver) {
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -37,13 +38,13 @@ public class HomePage extends UserActions{
 	@FindBy(css = ".logged-in")
 	WebElement username;
 	
-	public void verifyHomePageHeader() {
-		verifyRedirectedPage(homePageHeader, homePageHeadertext);
+	public Boolean verifyHomePageHeader() {
+		return verifyRedirectedPage(homePageHeader, homePageHeadertext);
 	}
 	
-	public CreateAccountPage gotoSignupPage() {
+	public void gotoSignupPage() {
 		userclick(signupButton);
-		return createAccountPage;
+		
 		
 	}
 	
@@ -51,8 +52,9 @@ public class HomePage extends UserActions{
 		return username.getText().contains(userCredentials.getFirstName()) && username.getText().contains(userCredentials.getLastName());
 	}
 	
-	public SignInPage goToSigninPage() {
+	public void goToSigninPage() {
 		userclick(signinButton);
-		return signInPage;
 	}
+	
+	
 }

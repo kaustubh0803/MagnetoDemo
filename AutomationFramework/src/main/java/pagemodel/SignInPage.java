@@ -10,13 +10,13 @@ import utilities.UserActions;
 
 import utilities.GetUserCredentials;
 
-public class SignInPage extends GetUserCredentials {
+public class SignInPage extends UserActions {
 
 	public WebDriver driver;
-	public UserActions userActions;
 	public HomePage homePage;
 	
 	public SignInPage(WebDriver driver) {
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -31,15 +31,15 @@ public class SignInPage extends GetUserCredentials {
 	WebElement login;
 	
 	public void fillEmail() throws IOException {
-		userActions.enterFieldValue(email, getEmail());
+		enterFieldValue(email, GetUserCredentials.getEmail());
 	}
 	
 	public void fillPassword() throws IOException {
-		userActions.enterFieldValue(password, getPassword());
+		enterFieldValue(password, GetUserCredentials.getPassword());
 	}
 	
-	public HomePage clickOnCreateAccount() {
-		userActions.userclick(login);
-		return homePage;
+	public void clickOnCreateAccount() {
+		userclick(login);
+		
 	}
 }

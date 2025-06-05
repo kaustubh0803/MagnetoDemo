@@ -13,7 +13,6 @@ import utilities.GetUserCredentials;
 public class Basetest extends GetUserCredentials {
 
 	public WebDriver driver;
-	public HomePage homePage;
 	
 	public WebDriver initializeDriver() {
 		driver=new ChromeDriver();
@@ -22,10 +21,11 @@ public class Basetest extends GetUserCredentials {
 		return driver;
 }
 	
-	public HomePage launchApplication() throws IOException {
+	public WebDriver launchApplication() throws IOException {
 		Properties prop=PropertiesFileSetup();
+		driver=initializeDriver();
 		driver.get(prop.getProperty("url"));
-		return homePage;
+		return driver;
 	}
 	
 	public void teardown() {
