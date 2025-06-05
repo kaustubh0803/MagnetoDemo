@@ -11,6 +11,7 @@ import utilities.UserActions;
 public class HomePage extends UserActions{
 
 	public WebDriver driver;
+	private String homePageHeadertext="Home Page";
 	SignInPage signInPage;
 	CreateAccountPage createAccountPage;
 	
@@ -28,8 +29,8 @@ public class HomePage extends UserActions{
 	@FindBy(css=".base")
 	WebElement homePageHeader;
 	
-	public String getHomePageHeaderText() {
-		return homePageHeader.getText();
+	public void verifyHomePageHeader() {
+		verifyRedirectedPage(homePageHeader, homePageHeadertext);
 	}
 	
 	public CreateAccountPage gotoSignupPage() {
