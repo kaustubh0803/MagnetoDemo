@@ -15,6 +15,11 @@ The Projects automates below Scenarios for the application:
 
 --> Verification of Successful account creation and successful login.
 
+# Test Cases
+
+  Test Cases are provided in the excel file provided under TestCases folder.
+
+
 # Technologies Used
 --> Java 11
 
