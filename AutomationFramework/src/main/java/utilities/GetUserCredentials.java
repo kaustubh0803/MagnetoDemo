@@ -6,7 +6,8 @@ import java.util.Properties;
 
 public class GetUserCredentials {
 
-	public static String emailvalue;
+	private static String emailvalue;
+	
 	public static Properties PropertiesFileSetup() throws IOException {
 		Properties prop=new Properties();
 		String basePath=System.getProperty("user.dir");

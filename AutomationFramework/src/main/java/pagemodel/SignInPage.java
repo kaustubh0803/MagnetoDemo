@@ -12,8 +12,8 @@ import utilities.GetUserCredentials;
 
 public class SignInPage extends UserActions {
 
-	public WebDriver driver;
-	public HomePage homePage;
+	private WebDriver driver;
+	private HomePage homePage;
 	
 	public SignInPage(WebDriver driver) {
 		super(driver);

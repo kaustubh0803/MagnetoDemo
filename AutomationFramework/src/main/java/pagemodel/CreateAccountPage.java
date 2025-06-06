@@ -13,8 +13,8 @@ import utilities.UserActions;
 
 public class CreateAccountPage extends UserActions {
 
-	public WebDriver driver;
-	public MyAccountPage myAccountPage;
+	private WebDriver driver;
+	private MyAccountPage myAccountPage;
 	
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);

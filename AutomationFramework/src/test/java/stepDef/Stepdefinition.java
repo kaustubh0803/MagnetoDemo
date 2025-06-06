@@ -1,8 +1,6 @@
 package stepDef;
 
 import java.io.IOException;
-import java.security.PublicKey;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -17,11 +15,11 @@ import testUtilities.Basetest;
 
 public class Stepdefinition extends Basetest {
 
-	WebDriver driver;
-	HomePage homePage;
-	CreateAccountPage createAccountPage;
-	MyAccountPage myAccountPage;
-	SignInPage signInPage;
+	private WebDriver driver;
+	private HomePage homePage;
+	private CreateAccountPage createAccountPage;
+	private MyAccountPage myAccountPage;
+	private SignInPage signInPage;
 	
 	
 	@Given("the user is on the Application Home page")

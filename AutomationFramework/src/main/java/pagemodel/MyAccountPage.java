@@ -12,8 +12,8 @@ import utilities.UserActions;
 
 public class MyAccountPage extends UserActions {
 
-	public WebDriver driver;
-	public GetUserCredentials userCredentials;
+	private WebDriver driver;
+	private GetUserCredentials userCredentials;
 	private String accountHeadertext="My Account";
 	public MyAccountPage(WebDriver driver) {
 		super(driver);

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 public class UserActions {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	
 	public UserActions(WebDriver driver) {
 		this.driver=driver;

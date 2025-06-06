@@ -13,8 +13,8 @@ import utilities.UserActions;
 
 public class HomePage extends UserActions{
 
-	public WebDriver driver;
-	public GetUserCredentials userCredentials;
+	private WebDriver driver;
+	private GetUserCredentials userCredentials;
 	
 	private String homePageHeadertext="Home Page";
 	SignInPage signInPage;
